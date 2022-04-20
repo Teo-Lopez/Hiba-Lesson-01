@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Repaso de hooks
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Hooks mas comunes por orden de importancia:
 
-## Available Scripts
+useState -> gestiona el estado de un componente
+useEffect -> gestiona las acciones que se disparan en respuesta a algun cambio
+useContext -> gestiona informacion disponible desde cualquier componente
 
-In the project directory, you can run:
+---
 
-### `npm start`
+useCallback -> memoriza una funcion
+useMemo -> memoriza un valor
+useRef -> crea una referencia inmutable entre renderizados
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## UseStateExample.js
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Muestra un minicaso de uso del useState cambiando el color de un texto.
+También tiene un botón que cambia el color a mano cuando es clickado
 
-### `npm test`
+## UseEffectExample.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Muestra varios casos de uso del useEffect y su array de dependencias.
+Recuerda que useEffect ejecuta la función que le pasas cuando detecta un cambio en cualquier valor de su array de dependencias.
 
-### `npm run build`
+## context/UserContext.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Archivo dónde creamos el contexto para el usuario, el nombre lo hemos decidido nosotros, es irrelevante.
+- En App.js encontrarás el primer uso del Contexto, usamos Context.Provider para envolver la aplicación y comunicarle el valor del contexto. En este caso el objeto de usuario {name, gender}
+- En UserProfile.js encontrarás un ejemplo de como sacar información del contexto. Llamamos a useContext y le pasamos el contexto del que queramos obtener la información.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Ciclo de vida de un componente
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![](https://i1.wp.com/programmingwithmosh.com/wp-content/uploads/2018/10/Screen-Shot-2018-10-31-at-1.44.28-PM.png?ssl=1)
 
-### `npm run eject`
+### Links
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Referencia de hooks](https://reactjs.org/docs/hooks-reference.html#usecontext)
+[Create context](https://reactjs.org/docs/context.html#reactcreatecontext)

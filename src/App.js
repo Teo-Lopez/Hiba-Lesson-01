@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { UserProfile } from "./UserProfile";
+import UserContext from "./context/userContext";
+import UseEffectExamples from "./UseEffectExamples";
+import UseStateExamples from "./UseStateExamples";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    //Paso 2 envolver la aplicacion en ese contexto y darle un valor de inicio
+    <UserContext.Provider value={{ name: "Hiba", gender: "female" }}>
+      <div className="App">
+        <UseStateExamples />
+        <UseEffectExamples />
+        <UserProfile />
+      </div>
+    </UserContext.Provider>
   );
 }
 
